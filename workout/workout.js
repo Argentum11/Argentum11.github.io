@@ -110,7 +110,7 @@ function create_input(id, type, placeholder, min, max){
         var attribute_max = `max="${max}"`;
     }
     
-    var input_tag = `<input type=${type} ${style_width(100)} id=${id} placeholder=${placeholder} ${attribute_min} ${attribute_max}>`;
+    var input_tag = `<input type=${type} ${style_width(12)} id=${id} placeholder=${placeholder} ${attribute_min} ${attribute_max}>`;
     return input_tag;
 }
 
