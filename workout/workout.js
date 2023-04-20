@@ -68,13 +68,13 @@ function add_exercise_to_table(){
     remove_input_row();
     var exercise_HTML = 
     `<div class="row">
-        <div class="col-1">${number_of_existing_exercises()+1}</div>
-        <div class="col-2">${exercise.exercise_name}</div>
-        <div class="col-2">${exercise.set}</div>
-        <div class="col-2">${exercise.reps}</div>
-        <div class="col-2">${exercise.weight}</div>
-        <div class="col-2">${exercise.rest}</div>
-        <div class="col-1">${exercise.self_evaluation}</div>
+        <div class="col-1  text-center">${number_of_existing_exercises()+1}</div>
+        <div class="col-2 text-center">${exercise.exercise_name}</div>
+        <div class="col-2 text-center">${exercise.set}</div>
+        <div class="col-2 text-center">${exercise.reps}</div>
+        <div class="col-2 text-center">${exercise.weight}</div>
+        <div class="col-2 text-center">${exercise.rest}</div>
+        <div class="col-1 text-center">${exercise.self_evaluation}</div>
     </div>`
     table.innerHTML += exercise_HTML;
     add_new_input_group();
@@ -114,6 +114,8 @@ function create_input(id, type, placeholder, min, max){
     return input_tag;
 }
 
+var evaluation_list = [];
+
 function create_dropdown(id, min, max) {
     var dropdown =
     `<select class="form-select" id=${id} aria-label="Default select example">
@@ -128,7 +130,7 @@ function create_dropdown(id, min, max) {
 function add_new_input_group() {
     var input_group = 
     `<div class="row" id=${CURRENT_INPUT}>
-        <div class="col-1"><button type="button" class="btn btn-primary" onclick="add_exercise_to_table()">add</button></div>
+        <div class="col-1"><button type="button" class="btn btn-primary btn-sm" onclick="add_exercise_to_table()">add</button></div>
         <div class="col-2">${create_input(EXERCISE_NAME_ID, "text", EXERCISE_NAME)}</div>
         <div class="col-2">${create_input(SET_ID, "number", SET, 0)}</div>
         <div class="col-2">${create_input(REPS_ID, "number", REPS, 0)}</div>
